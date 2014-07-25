@@ -51,3 +51,7 @@ ClearSkies/
 ```
 
 Development is done in `src/`
+
+====
+
+_&copy; 2014 Bradley Rosenfeld_
