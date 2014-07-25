@@ -20,7 +20,7 @@ Automatically creates a livereload server and outputs non-minified JS files from
 ###Production Build
 _Run with `grunt build`_
 
-Minifies all files from `src/` for production.
+Minifies and concats all files from `src/` for production.
 
 ###Deployment
 _Run with `grunt dist`_
