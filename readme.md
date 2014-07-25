@@ -48,7 +48,11 @@ ClearSkies/
 ......../splash
 ..../src
 ......../js
-............/includes
+............/dependencies
+............/controllers
+............/directives
+............/factories
+............/filters
 ......../css
 ..../production (not tracked by version control)
 ```

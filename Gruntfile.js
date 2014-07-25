@@ -15,18 +15,32 @@ module.exports = function(grunt) {
         dest: 'build/js/<%= pkg.name %>.js'
       },
       extras: {
-        src: 'build/js/build.js',
-        dest: 'build/js/build.js'
+        src: 'build/js/dependencies.js',
+        dest: 'build/js/dependencies.js'
       }
     },
     concat: {
+      options: {
+        separator: '\n\n',
+      },
       basic: {
-        src: ['src/js/main.js'],
+        src: [
+          'src/js/intro.js',
+          'src/js/main.js',
+          'src/js/factories/*.js',
+          'src/js/filters/*.js',
+          'src/js/directives/*.js',
+          'src/js/controllers/*.js',
+          'src/js/outro.js',
+        ],
         dest: 'build/js/<%= pkg.name %>.js'
       },
-      extras: {
-        src: ['src/js/angular.min.js', 'src/js/includes/*.js'],
-        dest: 'build/js/build.js'
+      dependencies: {
+        src: [
+          'src/js/dependencies/angular.js',
+          'src/js/dependencies/*.js',
+        ],
+        dest: 'build/js/dependencies.js'
       }
     },
     htmlmin: {
@@ -96,7 +110,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-build-control');
 
   // Default task(s).
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['dev', 'watch']);
   grunt.registerTask('dev', ['concat', 'cssmin', 'htmlmin:dev']);
   grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'htmlmin:dist']);
   grunt.registerTask('production', ['build', 'copy', 'buildcontrol:pages' ]);
