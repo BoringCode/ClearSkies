@@ -12,17 +12,17 @@ This project uses [Node Package Manager](http://nodejs.org/) and [Grunt](http://
 npm install
 ```
 
-####Development Build
+###Development Build
 _Run with `grunt`_
 
 Automatically creates a livereload server and outputs non-minified JS files from `src/`.
 
-####Production Build
+###Production Build
 _Run with `grunt build`_
 
 Minifies all files from `src/` for production.
 
-####Deployment
+###Deployment
 _Run with `grunt dist`_
 
 Runs build, copies to `dist/`, and pushes to `gh-pages` branch.
