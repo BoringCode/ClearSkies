@@ -72,7 +72,7 @@ module.exports = function(grunt) {
     },
     buildcontrol: {
       options: {
-        dir: 'dist',
+        dir: 'production/',
         commit: true,
         push: true,
         connectCommits: false,

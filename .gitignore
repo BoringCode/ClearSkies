@@ -193,7 +193,6 @@ $RECYCLE.BIN/
 *.egg
 *.egg-info
 dist/
-build/
 eggs/
 parts/
 var/
@@ -216,3 +215,5 @@ pip-log.txt
 
 #Ignore Node stuff
 node_modules/
+
+production/
