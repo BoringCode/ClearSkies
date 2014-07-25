@@ -46,6 +46,7 @@ ClearSkies/
 ......../splash
 ..../src
 ......../js
+............/includes
 ......../css
 ..../dist (not tracked by version control)
 ```
