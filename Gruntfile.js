@@ -11,22 +11,22 @@ module.exports = function(grunt) {
         }
       },
       build: {
-        src: 'dev/js/<%= pkg.name %>.js',
-        dest: 'dev/js/<%= pkg.name %>.js'
+        src: 'build/js/<%= pkg.name %>.js',
+        dest: 'build/js/<%= pkg.name %>.js'
       },
       extras: {
-        src: 'dev/js/build.js',
-        dest: 'dev/js/build.js'
+        src: 'build/js/build.js',
+        dest: 'build/js/build.js'
       }
     },
     concat: {
       basic: {
         src: ['src/js/main.js'],
-        dest: 'dev/js/<%= pkg.name %>.js'
+        dest: 'build/js/<%= pkg.name %>.js'
       },
       extras: {
         src: ['src/js/angular.min.js', 'src/js/includes/*.js'],
-        dest: 'dev/js/build.js'
+        dest: 'build/js/build.js'
       }
     },
     htmlmin: {
@@ -36,12 +36,12 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {
-          'dev/index.html': 'src/index.html',
+          'build/index.html': 'src/index.html',
         }
       },
       dev: {
         files: {
-          'dev/index.html': 'src/index.html',
+          'build/index.html': 'src/index.html',
         }
       }
     },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           banner: '/* <%= pkg.name %> CSS Build v<%= pkg.version %> */'
         },
         files: {
-          'dev/css/<%= pkg.name %>.css': ['src/css/*.css']
+          'build/css/<%= pkg.name %>.css': ['src/css/*.css']
         }
       }
     },
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           // includes files within path and its sub-directories
-          {expand: true, cwd: 'dev/', src: ['**'], dest: 'dist/'},
+          {expand: true, cwd: 'build/', src: ['**'], dest: 'production/'},
         ]
       }
     },
@@ -99,6 +99,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('dev', ['concat', 'cssmin', 'htmlmin:dev']);
   grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'htmlmin:dist']);
-  grunt.registerTask('dist', ['build', 'copy', 'buildcontrol:pages' ]);
+  grunt.registerTask('production', ['build', 'copy', 'buildcontrol:pages' ]);
 
 };

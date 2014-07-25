@@ -22,12 +22,12 @@ Automatically creates a livereload server and outputs non-minified JS files from
 ###Production Build
 _Run with `grunt build`_
 
-Minifies and concats all files from `src/` for production.
+Minifies and concats all files from `src/` and moves to `build/` for production.
 
 ###Deployment
-_Run with `grunt dist`_
+_Run with `grunt production`_
 
-Runs build, copies to `dist/`, and pushes to `gh-pages` branch.
+Runs build, copies to `production/`, and pushes to `gh-pages` branch.
 
 
 ##Development
@@ -36,7 +36,7 @@ Runs build, copies to `dist/`, and pushes to `gh-pages` branch.
 
 ```
 ClearSkies/
-..../dev
+..../build
 ......../css
 ......../js
 ......../fonts
@@ -50,7 +50,7 @@ ClearSkies/
 ......../js
 ............/includes
 ......../css
-..../dist (not tracked by version control)
+..../production (not tracked by version control)
 ```
 
 Development is done in `src/`
