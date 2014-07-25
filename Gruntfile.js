@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           // includes files within path and its sub-directories
-          {expand: true, src: ['dev/fonts/**', 'dev/icon/*', 'dev/splash/**', 'dev/js/**', 'dev/css/**', 'dev/index.html'], dest: 'dist/'},
+          {expand: true, cwd: 'dev/', src: ['**'], dest: 'dist/'},
         ]
       }
     },
@@ -95,6 +95,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['concat', 'cssmin', 'htmlmin:dev', 'watch']);
   grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'htmlmin:dist']);
-  grunt.registerTask('dist', ['build', 'copy' ]);
+  grunt.registerTask('dist', ['build', 'copy', 'buildcontrol:pages' ]);
 
 };
