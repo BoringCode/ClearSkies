@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           banner: '/* <%= pkg.name %> CSS Build v<%= pkg.version %> */'
         },
         files: {
-          'dev/ss/<%= pkg.name %>.css': ['src/css/*.css']
+          'dev/css/<%= pkg.name %>.css': ['src/css/*.css']
         }
       }
     },
