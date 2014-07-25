@@ -56,8 +56,11 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['**/*'],
-      tasks: ['default'],
+      files: ['src/**'],
+      tasks: ['dev'],
+      options: {
+        livereload: true
+      }
     },
     copy: {
       main: {
@@ -93,7 +96,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-build-control');
 
   // Default task(s).
-  grunt.registerTask('default', ['concat', 'cssmin', 'htmlmin:dev', 'watch']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('dev', ['concat', 'cssmin', 'htmlmin:dev']);
   grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'htmlmin:dist']);
   grunt.registerTask('dist', ['build', 'copy', 'buildcontrol:pages' ]);
 
