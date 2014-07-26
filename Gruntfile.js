@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     cssmin: {
       add_banner: {
         options: {
-          banner: '/* <%= pkg.name %> CSS Build v<%= pkg.version %> */'
+          banner: '/* <%= pkg.name %> CSS Build v<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */'
         },
         files: {
           'build/css/<%= pkg.name %>.css': ['src/css/*.css']

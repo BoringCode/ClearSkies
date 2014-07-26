@@ -59,6 +59,8 @@ ClearSkies/
 
 Development is done in `src/`
 
+Individual pieces of functionality should be split into separate files and placed in the proper folder (factories in js/factories/, etc...)
+
 ====
 
 _&copy; 2014 Bradley Rosenfeld_

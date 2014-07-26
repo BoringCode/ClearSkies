@@ -1,6 +1,5 @@
 var weatherApp = angular.module('weatherApp', ['ngResource', 'ngAnimate', 'ngTouch']);
 
-//errors
 weatherApp.constant("errors", {
 	geo: {
 		unsupported: "Your browser does not support geolocation, try entering an address.",

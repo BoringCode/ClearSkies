@@ -83,6 +83,7 @@ button {
 		vertical-align: top;
 		display: inline-block;
 	}
+a { color: inherit; }
 ::-moz-selection {
 	color: white;
 	background: #D7443D;
@@ -119,6 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	font-size: 1.4em;
 	line-height: 1.8em;
+	margin-bottom: 0.8em;
 }
 
 .modal {
@@ -157,6 +159,13 @@ p {
 		background: white;
 		color: black;
 	}
+		.modal-content button {
+			padding-top: 0;
+			margin-right: 0;
+		}
+			.modal-content button:hover {
+				color: white;
+			}
 		.show .modal-content {
 			-webkit-animation: bounceUp 1000ms linear both;
 			animation: bounceUp 1000ms linear both;
@@ -177,9 +186,12 @@ p {
 				height: 100%;
 			}
 				.modal-content .close:hover {
-					opacity: 0.6;
+					color: inherit;
 					background: none;
 				}
+		.modal-body h3 {
+			margin-top: 0.8em;
+		}
 	.background-close {
 		cursor: pointer;
 		position: absolute;
@@ -348,6 +360,9 @@ body > header {
 		font-size: 7em;
 		line-height: 1em;
 	}
+	.deg {
+		margin-right: -0.5em;
+	}
 
 .upcoming-weather h2 {
 	margin-bottom: 0.8em;
@@ -363,17 +378,20 @@ body > header {
 	margin-bottom: 2%;
 	height: 100%;
 }
-	.upcoming-weather .col:first-child {
-		padding-left: 0;
-	}
-	.upcoming-weather .col:last-child {
-		padding-right: 0;
-	}
+		.upcoming-weather .col:first-child {
+			padding-left: 0;
+		}
+		.upcoming-weather .col:last-child {
+			padding-right: 0;
+		}
 
 /*Breakpoints*/
 @media all and (max-width: 1100px) {
 	body {
 		font-size: 90%;
+	}
+	.col-5-1 {
+		width: 33%;
 	}
 }
 @media all and (max-width: 850px) {
@@ -397,6 +415,9 @@ body > header {
 	body > header .main-btn span {
 		font-size: 1.2em;
 	}
+	.col-5-1 {
+		width: 50%;
+	}
 	.search-btn i {
 		line-height: 3.4em;
 		font-size: 0.8em;
@@ -405,6 +426,10 @@ body > header {
 		margin: 0;
 		height: 100%;
 		max-height: 100%;
+	}
+	.break-sm {
+		line-height: 1em;
+		display: block;
 	}
 }
 

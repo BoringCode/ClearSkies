@@ -64,16 +64,22 @@
 						<button class="close" ng-click="settingsModal = false; $event.preventDefault();"><i class="icon-cross"></i></button>
 					</header>
 					<div class="modal-body">
-						<p>Units: <select ng-model="settings.unit.current" ng-options="unit for unit in settings.unit.options" ng-required></select></p>
+						<p>Units: <select ng-model="settings.unit.current" ng-options="unit for unit in settings.unit.options"></select></p>
+						<h3>About</h3>
+						<p>Clear Skies is a weather app designed to be used on every device with a web browser. Enter your location (or use your GPS location) to get the current conditions and a 5-day forecast.</p>
+						<p>
+							Do you like Clear Skies? Please consider <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z44KLV4JMKQCQ&lc=US&item_name=Clear%20Skies%20by%20Bradley%20Rosenfeld&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" target="_blank">donating</a> to help me pay for API usage.
+						</p>
 						<h3>Credits</h3>
-						<a href="http://forecast.io">Powered by Forecast</a>
-						<a href="https://developers.google.com/maps/documentation/geocoding/">Google Geocoder API</a>
-						<a href="http://adamwhitcroft.com/climacons/">Climacons</a>
-						<a href="http://colebemis.com/feather/">Feather Icons</a>
+						<p class="credits">
+							<a href="http://forecast.io" target="_blank">Powered by Forecast</a>,
+							<a href="https://developers.google.com/maps/documentation/geocoding/" target="_blank">Google Geocoder API</a>,
+							<a href="http://adamwhitcroft.com/climacons/" target="_blank">Climacons</a>,
+							<a href="http://colebemis.com/feather/" target="_blank">Feather Icons</a>
+						</p>
 					</div>
 					<footer>
-						<p>Do you like Clear Skies? Please consider donating to help me pay for API usage.</p>
-						<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z44KLV4JMKQCQ&lc=US&item_name=Clear%20Skies%20by%20Bradley%20Rosenfeld&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" target="_blank" class="pull-left">Donate</a>
+						<hr>
 						<button ng-click="restore()" class="reset pull-right">Reset App</button>
 					</footer>
 				</div>
@@ -87,8 +93,8 @@
 						<i class="current-icon climacon {{weather.current | icon}}"></i>
 					</div>
 					<div class="col col-2-1">
-						<h2 class="temperature">{{weather.current.temperature | number:0}}&deg;</h2>
-						<p>Feels like {{weather.current.apparentTemperature | number:0}}&deg; &ndash; <em>{{weather.current.humidity * 100 | number: 0}}% relative humidity</em></p>
+						<h2 class="temperature">{{weather.current.temperature | number:0}}<span class="deg">&deg;</span></h2>
+						<p>Feels like {{weather.current.apparentTemperature | number:0}}&deg; <span class="break-sm">&ndash;</span> <em>{{weather.current.humidity * 100 | number: 0}}% relative humidity</em></p>
 					</div>
 				</div>
 				<p>{{ summary }}</p>
