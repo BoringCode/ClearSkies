@@ -164,7 +164,7 @@ p {
 		-webkit-box-shadow: 0 3px 6px 1px rgba(0,0,0,0.4);
 		box-shadow: 0 3px 6px 1px rgba(0,0,0,0.4);
 		background: white;
-		color: black;
+		color: #071B2F;
 	}
 		.modal-content button {
 			padding-top: 0;
@@ -174,8 +174,8 @@ p {
 				color: white;
 			}
 		.show .modal-content {
-			-webkit-animation: bounceUp 1000ms linear both;
-			animation: bounceUp 1000ms linear both;
+			-webkit-animation: bounceUp 1000ms linear;
+			animation: bounceUp 1000ms linear;
 		}
 		.modal-content header {
 			position: relative;
@@ -188,9 +188,10 @@ p {
 				color: #d7443d;
 				position: absolute;
 				top: 0;
-				right: 0;
+				right: -1em;
 				margin-right: 0;
 				height: 100%;
+				padding: 0 1em;
 			}
 				.modal-content .close:hover {
 					color: inherit;
