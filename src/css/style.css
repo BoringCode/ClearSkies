@@ -50,6 +50,9 @@ body {
 	.col-2-1 {
 		width: 50%;
 	}
+	.col-3-1 {
+		width: 33%;
+	}
 	.col-4-1 {
 		width: 25%;
 	}
@@ -122,6 +125,10 @@ p {
 	line-height: 1.8em;
 	margin-bottom: 0.8em;
 }
+.small {
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
 
 .modal {
 	position: fixed;
@@ -133,6 +140,8 @@ p {
 	background: rgba(0,0,0,0.4);
 	text-shadow: none;
 	opacity: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	-webkit-transition: opacity 200ms linear;
 	-moz-transition: opacity 200ms linear;
 	-ms-transition: opacity 200ms linear;
@@ -146,9 +155,6 @@ p {
 	.modal-content {
 		position: relative;
 		z-index: 101;
-		overflow: auto;
-		-webkit-overflow-scrolling: touch;
-		max-height: 80%;
 		width: 100%;
 		max-width: 1024px;
 		padding: 1.4em;
@@ -189,9 +195,13 @@ p {
 					color: inherit;
 					background: none;
 				}
-		.modal-body h3 {
+		.modal-body h3, .modal-body h4 {
 			margin-top: 0.8em;
 		}
+	.modal-content footer {
+		clear: both;
+		min-height: 2.5em;
+	}
 	.background-close {
 		cursor: pointer;
 		position: absolute;
@@ -199,6 +209,16 @@ p {
 		left: 0;
 		width: 100%;
 		height: 100%;
+	}
+.units button {
+	font-size: 1.4em;
+	text-align: center;
+	width: 100%;
+	min-height: 2.5em;
+}
+	.units .climacon {
+		line-height: 1;
+		font-size: 1.8em;
 	}
 
 body > header {
@@ -253,8 +273,9 @@ body > header {
 			body > header .side-btn {
 				width: 16.67%;
 			}
-			body > header.active .search-btn, body:not(.touch) > header button:hover, body > header button.ng-click-active {
+			body > header.active .search-btn, body:not(.touch) > header button:hover, body > header button.ng-click-active, body > header .selected {
 				background: #B73B32;
+				color: white;
 			}
 	.location-search {
 		position: absolute;
@@ -424,8 +445,7 @@ body > header {
 	}
 	.modal-content {
 		margin: 0;
-		height: 100%;
-		max-height: 100%;
+		min-height: 100%;
 	}
 	.break-sm {
 		line-height: 1em;
