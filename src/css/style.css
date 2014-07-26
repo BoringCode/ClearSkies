@@ -253,7 +253,7 @@ body > header {
 			-o-transition: all 200ms linear;
 			transition: all 200ms linear;
 		}
-			body.installed-app > header button {
+			body.installed-app .top-bar button {
 				padding-top: 15px;
 			}
 			body > header .main-btn {

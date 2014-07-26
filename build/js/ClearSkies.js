@@ -315,6 +315,7 @@ weatherApp.directive('detectDevice', ['$document',
 				if (window.navigator.standalone === true) {
 					element.addClass("installed-app");
 				}
+				element.addClass("installed-app");
 			}
 		};
 	}
