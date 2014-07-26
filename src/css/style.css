@@ -140,7 +140,8 @@ p {
 	background: rgba(0,0,0,0.4);
 	text-shadow: none;
 	opacity: 0;
-	overflow: auto;
+	overflow: hidden;
+	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 	-webkit-transition: opacity 200ms linear;
 	-moz-transition: opacity 200ms linear;
