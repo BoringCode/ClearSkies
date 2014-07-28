@@ -57,10 +57,10 @@
 					<li ng-repeat="location in settings.locations | orderBy:'-added' | limitTo:25 | filter:newLocation" class="location" ng-click="setCurrent(location);">{{location.value}}</li>
 				</ul>
 			</div>
-			<div class="modal" ng-class="{show: settingsModal}">
-				<div class="modal-content" no-bounce>
+			<div class="modal" ng-class="{show: settingsModal}" no-bounce>
+				<div class="modal-content">
 					<header>
-						<h2>Settings</h2>
+						<h2>Clear Skies</h2>
 						<button class="close" ng-click="settingsModal = false; $event.preventDefault();"><i class="icon-cross"></i></button>
 					</header>
 					<div class="modal-body">
@@ -98,35 +98,45 @@
 		</header>
 		<div ng-controller="WeatherCtrl" ng-class="{loading: weather.loading}" class="main" no-bounce>
 			<div ng-controller="Current" class="wrap current-weather">
-				<div class="row center middle">
-					<div class="col col-2-1">
+				<div class="row middle center">
+					<div class="col col-3-1 col-sm-2-1">
 						<i class="current-icon climacon {{weather.current | icon}}"></i>
 					</div>
-					<div class="col col-2-1">
-						<h2 class="temperature">{{weather.current.temperature | number:0}}<span class="deg">&deg;</span></h2>
-						<p>Feels like {{weather.current.apparentTemperature | number:0}}&deg; <span class="break-sm">&ndash;</span> <em>{{weather.current.humidity * 100 | number: 0}}% relative humidity</em></p>
-					</div>
+					<h2 class="temperature col col-3-1 col-sm-2-1">
+						{{weather.current.temperature | number:0}}&deg;
+					</h2>
+					<ul class="col col-3-1 data-summary left break-sm">
+						<li>
+							<i class="climacon small sunglasses"></i>
+							Feels like {{weather.current.apparentTemperature | number:0}}&deg;
+						</li>
+						<li>
+							<i class="climacon small thermometer medium-high"></i>
+							{{predicted.temperatureMin | number:0}}&deg;&mdash;{{predicted.temperatureMax | number:0}}&deg;
+						</li>
+						<li>
+							<i class="climacon small compass north" style="transform: rotate({{weather.current.windBearing}}deg)"></i>
+							{{weather.current.windSpeed | number: 1}}{{units[weather.data.flags.units].speed}} wind
+						</li>
+						<li>
+							<i class="climacon small umbrella"></i>
+							{{weather.current.precipProbability | number: 0 }}% chance of rain
+						</li>
+					</ul>
 				</div>
-				<p>{{ summary }}</p>
-				<div class="row">
-					<div class="col col-4-1">
-						<p>{{weather.current.windSpeed}}</p>
-					</div>
-				</div>
+				<p class="text-summary">{{summary}}</p>
 			</div>
 			<div ng-controller="Upcoming" class="wrap upcoming-weather">
-				<h2>Upcoming</h2>
-				<ul class="row">
+				<ul class="row center">
 					<li ng-repeat="conditions in weather.upcoming.data | slice:1:6" class="col col-5-1">
+						<p><strong>{{conditions.time | formatTime:"ddd" }}</strong></p>
 						<i class="upcoming-icon climacon {{conditions | icon}}"></i>
-						<p><strong>{{conditions.time | formatTime:"dddd" }}</strong></p>
-						<p>{{conditions.temperatureMin | number:0}}&deg; &mdash; {{conditions.temperatureMax | number: 0}}&deg;</p>
-						<p>{{conditions.summary}}</p>
+						<h4>{{conditions.temperatureMax | number: 0}}&deg;</h4>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<div ng-controller="Message" class="modal" ng-class="{show: show}">
+		<div ng-controller="Message" class="modal" ng-class="{show: show}" no-bounce>
 			<div class="modal-content" no-bounce>
 				<header>
 					<h2>{{messageTitle}}</h2>

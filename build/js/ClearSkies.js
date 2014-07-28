@@ -1,4 +1,4 @@
-;(function( window, document, undefined ){
+(function(window, document, undefined){
   'use strict';
 
 var weatherApp = angular.module('weatherApp', ['ngResource', 'ngAnimate', 'ngTouch']);
@@ -12,6 +12,18 @@ weatherApp.constant("errors", {
 	},
 	network: "Could not load the weather. Please check your network connection and try again later.",
 	storage: "Your browser does not support local storage. We can't save your settings and the app will not work."
+});
+weatherApp.constant("units", {
+	us: {
+		speed: "mph",
+		distance: "miles",
+		temperature: "Fahrenheit",
+	},
+	si: {
+		speed: "kph",
+		distance: "kilometers",
+		temperature: "Celsius",
+	}
 });
 
 weatherApp.factory('GeoLocation', ['$q', '$window', '$rootScope', '$resource', '$filter', '$timeout', 'errors', 'Settings',
@@ -471,17 +483,21 @@ weatherApp.controller("Settings", ['$scope', '$rootScope', '$filter', '$timeout'
 	}
 ]);
 
-weatherApp.controller("WeatherCtrl", ['$scope', '$filter', 'errors', 'Weather', 'Settings', 'GeoLocation',
-	function($scope, $filter, errors, Weather, Settings, GeoLocation) {
+weatherApp.controller("WeatherCtrl", ['$scope', '$filter', 'errors', 'units', 'Weather', 'Settings', 'GeoLocation',
+	function($scope, $filter, errors, units, Weather, Settings, GeoLocation) {
 		//Only dev
 		$scope.settings = Settings.user;
 		$scope.weather = Weather;
 		$scope.location = GeoLocation;
+		$scope.units = units;
 	}
 ]).controller("Current", ['$scope',
 	function($scope) {
-		$scope.summary = "It may be hot, but at least it's not raining!";
+		$scope.summary = "It's hot, but at least it isn't raining. You should put some sunscreen lotion on and go swimming!";
 		//Stuff specific to current weather
+		$scope.$watchCollection("weather", function() {
+			$scope.predicted = $scope.weather.upcoming.data[0];
+		})
 	}
 ]).controller("Upcoming", ['$scope',
 	function($scope) {
@@ -489,4 +505,4 @@ weatherApp.controller("WeatherCtrl", ['$scope', '$filter', 'errors', 'Weather', 
 	}
 ]);
 
-}( window, document ));
+}(window, document));

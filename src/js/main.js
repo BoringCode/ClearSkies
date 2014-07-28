@@ -10,3 +10,15 @@ weatherApp.constant("errors", {
 	network: "Could not load the weather. Please check your network connection and try again later.",
 	storage: "Your browser does not support local storage. We can't save your settings and the app will not work."
 });
+weatherApp.constant("units", {
+	us: {
+		speed: "mph",
+		distance: "miles",
+		temperature: "Fahrenheit",
+	},
+	si: {
+		speed: "kph",
+		distance: "kilometers",
+		temperature: "Celsius",
+	}
+});
