@@ -106,25 +106,25 @@
 						{{weather.current.temperature | number:0}}&deg;
 					</h2>
 					<ul class="col col-3-1 data-summary left break-sm">
-						<li>
+						<li class="col-sm col-sm-2-1">
 							<i class="climacon small sunglasses"></i>
 							Feels like {{weather.current.apparentTemperature | number:0}}&deg;
 						</li>
-						<li>
+						<li class="col-sm col-sm-2-1">
 							<i class="climacon small thermometer medium-high"></i>
 							{{predicted.temperatureMin | number:0}}&deg;&mdash;{{predicted.temperatureMax | number:0}}&deg;
 						</li>
-						<li>
-							<i class="climacon small compass north" style="transform: rotate({{weather.current.windBearing}}deg)"></i>
-							{{weather.current.windSpeed | number: 1}}{{units[weather.data.flags.units].speed}} wind
+						<li class="col-sm col-sm-2-1">
+							<i class="climacon small compass north" style="-webkit-transform: rotate({{weather.current.windBearing}}deg); transform: rotate({{weather.current.windBearing}}deg)"></i>
+							{{weather.current.windSpeed | number: 1}}{{units[weather.data.flags.units].speed}} {{ weather.current.windBearing | cardinalDirection }} wind
 						</li>
-						<li>
+						<li class="col-sm col-sm-2-1">
 							<i class="climacon small umbrella"></i>
 							{{weather.current.precipProbability | number: 0 }}% chance of rain
 						</li>
 					</ul>
 				</div>
-				<p class="text-summary">{{summary}}</p>
+				<p class="text-summary center">{{summary}}</p>
 			</div>
 			<div ng-controller="Upcoming" class="wrap upcoming-weather">
 				<ul class="row center">

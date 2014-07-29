@@ -30,7 +30,7 @@ body {
 
 .pull-left { float: left; } .pull-right { float: right; }
 
-.wrap { width: 100%; max-width: 1024px; margin: auto; }
+.wrap { width: 100%; max-width: 1200px; margin: auto; }
 
 .row {
 	display: block;
@@ -205,6 +205,7 @@ p {
 				}
 		.modal-body h3, .modal-body h4 {
 			margin-top: 0.8em;
+			margin-bottom: 0;
 		}
 	.modal-content footer {
 		clear: both;
@@ -396,8 +397,9 @@ body > header {
 		line-height: 1em;
 		margin-bottom: 0;
 	}
-	.data-summary {
+	.current-weather .data-summary {
 		font-size: 1.4em;
+		padding-left: 5%;
 	}
 		.data-summary li {
 			margin-bottom: 0.2em;
@@ -462,11 +464,15 @@ body > header {
 		margin: 0;
 		min-height: 100%;
 	}
-	.data-summary li {
-		display: inline-block;
-		margin-right: 4%;
+	.current-weather .col {
+		padding: 0;
 	}
 	/*Columns*/
+	.col-sm {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: -0.25em;
+	}
 	.col-sm-2-1 {
 		width: 50%;
 	}
