@@ -467,6 +467,9 @@ body > header {
 		padding: 0;
 	}
 	/*Columns*/
+	.center-sm {
+		text-align: center;
+	}
 	.col-sm {
 		display: inline-block;
 		vertical-align: top;
