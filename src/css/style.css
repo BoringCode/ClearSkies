@@ -407,8 +407,7 @@ body > header {
 		.data-summary .climacon {
 			display: inline-block;
 			vertical-align: middle;
-			margin-right: 0.4em;
-			line-height: 0.5em;
+			margin-right: 0.2em;
 			width: 10%;
 			text-align: center;
 		}
