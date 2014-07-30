@@ -418,8 +418,8 @@ body > header {
 		transition: all 600ms ease-out;
 	}
 		.main.loading:before {
-			-webkit-animation: bounceDown 2000ms linear both;
-			animation: bounceDown 2000ms linear both;
+			-webkit-animation: bounceDown 1000ms linear both;
+			animation: bounceDown 1000ms linear both;
 			-webkit-transform: translateY(0);
 			-moz-transform: translateY(0);
 			-ms-transform: translateY(0);
