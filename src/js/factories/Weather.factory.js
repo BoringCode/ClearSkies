@@ -7,7 +7,7 @@ weatherApp.factory('Weather', ['$resource', '$rootScope', 'errors', 'Settings', 
 		//Create return var
 		var request = {
 			error: false,
-			loading: false,
+			loading: true,
 			data: {},
 			current: {},
 			upcoming: {},

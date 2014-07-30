@@ -1,4 +1,4 @@
-var weatherApp = angular.module('weatherApp', ['ngResource', 'ngAnimate', 'ngTouch']);
+var weatherApp = angular.module('weatherApp', ['ngResource', 'ngTouch']);
 
 weatherApp.constant("errors", {
 	geo: {

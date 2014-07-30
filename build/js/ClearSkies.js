@@ -1,7 +1,7 @@
 (function(window, document, undefined){
   'use strict';
 
-var weatherApp = angular.module('weatherApp', ['ngResource', 'ngAnimate', 'ngTouch']);
+var weatherApp = angular.module('weatherApp', ['ngResource', 'ngTouch']);
 
 weatherApp.constant("errors", {
 	geo: {
@@ -187,7 +187,7 @@ weatherApp.factory('Weather', ['$resource', '$rootScope', 'errors', 'Settings', 
 		//Create return var
 		var request = {
 			error: false,
-			loading: false,
+			loading: true,
 			data: {},
 			current: {},
 			upcoming: {},

@@ -98,14 +98,14 @@
 		</header>
 		<div ng-controller="WeatherCtrl" ng-class="{loading: weather.loading}" class="main" no-bounce>
 			<div ng-controller="Current" class="wrap current-weather">
-				<div class="row middle center">
-					<div class="col col-3-1 col-sm-2-1">
+				<div class="row middle">
+					<div class="col col-3-1 col-sm-2-1 center">
 						<i class="current-icon climacon {{weather.current | icon}}"></i>
 					</div>
-					<h2 class="temperature col col-3-1 col-sm-2-1">
+					<h2 class="temperature col col-3-1 col-sm-2-1 center">
 						{{weather.current.temperature | number:0}}&deg;
 					</h2>
-					<ul class="col col-3-1 data-summary left break-sm">
+					<ul class="col col-3-1 data-summary break-sm">
 						<li class="col-sm col-sm-2-1">
 							<i class="climacon small sunglasses"></i>
 							Feels like {{weather.current.apparentTemperature | number:0}}&deg;
@@ -115,12 +115,12 @@
 							{{predicted.temperatureMin | number:0}}&deg;&mdash;{{predicted.temperatureMax | number:0}}&deg;
 						</li>
 						<li class="col-sm col-sm-2-1">
-							<i class="climacon small compass north" style="-webkit-transform: rotate({{weather.current.windBearing}}deg); transform: rotate({{weather.current.windBearing}}deg)"></i>
-							{{weather.current.windSpeed | number: 1}}{{units[weather.data.flags.units].speed}} {{ weather.current.windBearing | cardinalDirection }} wind
-						</li>
-						<li class="col-sm col-sm-2-1">
 							<i class="climacon small umbrella"></i>
 							{{weather.current.precipProbability | number: 0 }}% chance of rain
+						</li>
+						<li class="col-sm col-sm-2-1">
+							<i class="climacon small compass north" style="-webkit-transform: rotate({{weather.current.windBearing}}deg); transform: rotate({{weather.current.windBearing}}deg)"></i>
+							{{weather.current.windSpeed | number: 1}}{{units[weather.data.flags.units].speed}} wind from the {{ weather.current.windBearing | cardinalDirection }}
 						</li>
 					</ul>
 				</div>

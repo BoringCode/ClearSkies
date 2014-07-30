@@ -42,7 +42,7 @@ body {
 		display: inline-block;
 		vertical-align: top;
 		height: 100%;
-		margin-right: -0.25em;
+		margin-right: -4px;
 	}
 		.middle .col {
 			vertical-align: middle;
@@ -169,6 +169,10 @@ p {
 		box-shadow: 0 3px 6px 1px rgba(0,0,0,0.4);
 		background: white;
 		color: #071B2F;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
 	}
 		.modal-content button {
 			padding-top: 0;
@@ -178,8 +182,8 @@ p {
 				color: white;
 			}
 		.show .modal-content {
-			-webkit-animation: bounceUp 1000ms linear;
-			animation: bounceUp 1000ms linear;
+			-webkit-animation-name: bounceUp;
+			animation-name: bounceUp;
 		}
 		.modal-content header {
 			position: relative;
@@ -253,7 +257,7 @@ body > header {
 			text-align: center;
 			vertical-align: top;
 			display: inline-block;
-			margin-right: -.25em;
+			margin-right: -0.19em;
 			height: 100%;
 			font-size: 1.1em;
 			-webkit-transition: all 200ms linear;
@@ -280,7 +284,7 @@ body > header {
 					font-size: 1em;
 				}
 			body > header .side-btn {
-				width: 16.67%;
+				width: 16.5%;
 			}
 			body > header.active .search-btn, body:not(.touch) > header button:hover, body > header button.ng-click-active, body > header .selected {
 				background: #B73B32;
@@ -368,10 +372,59 @@ body > header {
 	height: -moz-calc(100% - 6em);
 	height: -webkit-calc(100% - 6em);
 	height: calc(100% - 6em);
-	padding: 0 10px;
+	padding: 0 2%;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
+	.installed-app .main {
+		height: -moz-calc(100% - 5.5em);
+		height: -webkit-calc(100% - 5.5em);
+		height: calc(100% - 5.5em);
+	}
+	.main:before {
+		content: "Loading...";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+		background: #31B660;
+		font-family: "Chunk Five", serif;
+		text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+		font-size: 3em;
+		color: white;
+		display: flex;
+		justify-content: center; /* align horizontal */
+		align-items: center; /* align vertical */
+		/*Move up and out of the way*/
+		-webkit-transform: translateY(-200%);
+		-moz-transform: translateY(-200%);
+		-ms-transform: translateY(-200%);
+		-o-transform: translateY(-200%);
+		transform: translateY(-200%);
+		/*Transition for when sliding up*/
+		-webkit-transition: all 600ms ease-out;
+		-moz-transition: all 600ms ease-out;
+		-ms-transition: all 600ms ease-out;
+		-o-transition: all 600ms ease-out;
+		transition: all 600ms ease-out;
+	}
+		.main.loading:before {
+			-webkit-animation: bounceDown 2000ms linear both;
+			animation: bounceDown 2000ms linear both;
+			-webkit-transform: translateY(0);
+			-moz-transform: translateY(0);
+			-ms-transform: translateY(0);
+			-o-transform: translateY(0);
+			/*Don't transition anything*/
+			transform: translateY(0);
+			-webkit-transition-duration: 0ms;
+			-moz-transition-duration: 0ms;
+			-ms-transition-duration: 0ms;
+			-o-transition-duration: 0ms;
+			transition-duration: 0ms;
+		}
 
 .current-weather {
 	margin: 3% auto;
@@ -399,17 +452,27 @@ body > header {
 	}
 	.current-weather .data-summary {
 		font-size: 1.4em;
-		padding-left: 5%;
+		padding-left: 3%;
 	}
 		.data-summary li {
+			padding-left: 15%;
+			min-height: 1.6em;
+			line-height: 1.6em;
+			position: relative;
 			margin-bottom: 0.2em;
 		}
 		.data-summary .climacon {
-			display: inline-block;
-			vertical-align: middle;
+			position: absolute;
+			top: -0.1em;
+			left: 0;
+			height: 1em;
 			margin-right: 0.2em;
 			width: 10%;
 			text-align: center;
+		}
+		.data-summary .umbrella {
+			top: 0;
+			font-size: 1.6em;
 		}
 
 .upcoming-weather h2 {
@@ -429,9 +492,17 @@ body > header {
 		}
 
 /*Breakpoints*/
+@media all and (max-height: 850px) {
+	.modal-content {
+		margin-top: 4%;
+	}
+}
 @media all and (max-width: 1100px) {
 	body {
 		font-size: 90%;
+	}
+	.current-weather .col {
+		padding: 0;
 	}
 }
 @media all and (max-width: 850px) {
@@ -452,6 +523,14 @@ body > header {
 		}
 }
 @media all and (max-width: 500px) {
+	body > header .top-bar {
+		height: 5em;
+		line-height: 5em;
+	}
+		body.installed-app > header .top-bar {
+			height: 5.5em;
+		}
+
 	body > header .main-btn span {
 		font-size: 1.2em;
 	}
@@ -459,12 +538,26 @@ body > header {
 		line-height: 3.4em;
 		font-size: 0.8em;
 	}
+	.main {
+		height: -moz-calc(100% - 5em);
+		height: -webkit-calc(100% - 5em);
+		height: calc(100% - 5em);
+	}
+		.installed-app .main {
+			height: -moz-calc(100% - 5.5em);
+			height: -webkit-calc(100% - 5.5em);
+			height: calc(100% - 5.5em);
+		}
 	.modal-content {
 		margin: 0;
 		min-height: 100%;
 	}
 	.current-weather .col {
 		padding: 0;
+	}
+	.data-summary li {
+		padding-left: 8%;
+		padding-right: 2%;
 	}
 	/*Columns*/
 	.center-sm {
@@ -475,6 +568,9 @@ body > header {
 		vertical-align: top;
 		margin-right: -0.25em;
 	}
+		.middle .col-sm {
+			vertical-align: middle;
+		}
 	.col-sm-2-1 {
 		width: 50%;
 	}
@@ -484,6 +580,7 @@ body > header {
 	.break-sm {
 		line-height: 1em;
 		display: block;
+		margin: auto;
 	}
 		.col.break-sm {
 			width: 100%;
