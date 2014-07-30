@@ -393,9 +393,16 @@ body > header {
 		font-family: "Chunk Five", serif;
 		text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 		font-size: 3em;
+		text-align: center;
 		color: white;
-		display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+		display: -ms-flexbox;      /* TWEENER - IE 10 */
+		display: -webkit-flex;     /* NEW - Chrome */
+		display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		-webkit-justify-content: center; /* align horizontal */
 		justify-content: center; /* align horizontal */
+		-webkit-align-items: center; /* align vertical */
 		align-items: center; /* align vertical */
 		/*Move up and out of the way*/
 		-webkit-transform: translateY(-200%);
