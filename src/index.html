@@ -44,13 +44,24 @@
 	<body detect-device no-touch-scroll>
 		<header ng-controller="Settings" ng-class="{active: searchActive}">
 			<div class="top-bar">
-				<button class="refresh side-btn" refresh ng-click="$event.preventDefault();"><i class="icon-reload"></i><span>Refresh</span></button>
-				<button ng-click="searchActive = !searchActive; $event.preventDefault();" class="search-btn main-btn"><span>{{settings.currentLocation}}</span><i class="icon-search"></i></button>
-				<button class="toggle-settings side-btn" ng-click="settingsModal = true; $event.preventDefault();"><span>Settings</span><i class="icon-cog"></i></button>
+				<button class="refresh side-btn" refresh ng-click="$event.preventDefault();">
+					<i class="icon-reload"></i>
+					<span>Refresh</span>
+				</button><!--
+				remove space (this is here for non minfied dev purposes only)
+				--><button ng-click="searchActive = !searchActive; $event.preventDefault();" class="search-btn main-btn">
+					<span>{{settings.currentLocation}}</span>
+					<i class="icon-search"></i>
+				</button><!--
+				remove space (this is here for non minfied dev purposes only)
+				--><button class="toggle-settings side-btn" ng-click="settingsModal = true; $event.preventDefault();">
+					<span>Settings</span>
+					<i class="icon-cog"></i>
+				</button>
 			</div>
 			<div class="location-search">
 				<form ng-submit="addLocation();">
-					<input type="text" ng-model="newLocation" placeholder="Enter a location" focus="searchActive" blur="!searchActive">
+					<input type="text" ng-model="newLocation" placeholder="Enter a location" focus="searchActive" blur="!searchActive" required>
 				</form>
 				<ul>
 					<li class="actual-location" ng-click="setCurrent('Current Location'); searchActive = !searchActive;" ng-class="{current: settings.currentLocation == 'current'}"><i class="icon-location"></i> Your Location</li>
@@ -101,11 +112,13 @@
 				<div class="row middle">
 					<div class="col col-3-1 col-sm-2-1 center">
 						<i class="current-icon climacon {{weather.current | icon}}"></i>
-					</div>
-					<h2 class="temperature col col-3-1 col-sm-2-1 center">
+					</div><!--
+					remove space (this is here for non minfied dev purposes only)
+					--><h2 class="temperature col col-3-1 col-sm-2-1 center">
 						{{weather.current.temperature | number:0}}&deg;
-					</h2>
-					<ul class="col col-3-1 data-summary break-sm">
+					</h2><!--
+					remove space (this is here for non minfied dev purposes only)
+					--><ul class="col col-3-1 data-summary break-sm">
 						<li class="col-sm col-sm-2-1">
 							<i class="climacon small sunglasses"></i>
 							Feels like {{weather.current.apparentTemperature | number:0}}&deg;
@@ -127,7 +140,7 @@
 				<p class="text-summary center">{{summary}}</p>
 			</div>
 			<div ng-controller="Upcoming" class="wrap upcoming-weather">
-				<ul class="row center">
+				<ul class="row">
 					<li ng-repeat="conditions in weather.upcoming.data | slice:1:6" class="col col-5-1">
 						<p><strong>{{conditions.time | formatTime:"ddd" }}</strong></p>
 						<i class="upcoming-icon climacon {{conditions | icon}}"></i>
