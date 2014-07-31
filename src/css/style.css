@@ -508,6 +508,8 @@ body > header {
 	}
    .current-weather .data-summary {
       padding: 0 2%;
+      padding-bottom: 1em;
+      border-bottom: 0.1em solid #d7443d;
    }
    	.data-summary li {
    		padding-left: 8%;
@@ -541,17 +543,25 @@ body > header {
 		}
 }
 @media all and (max-width: 450px) {
-   .data-summary li {
-      display: block;
-      width: 100%;
-      margin: auto;
-      padding-left: 10%;
-      font-size: 120%;
-      text-align: center;
+   .temperature {
+      font-size: 6.2em;
+      text-align: right;
    }
-      .data-summary .climacon {
-         left: 3%;
+   .current-weather .data-summary {
+      padding-left: 0;
+      padding-right: 0;
+   }
+      .data-summary li {
+         display: block;
+         width: 100%;
+         margin: auto;
+         padding: 0 8%;
+         font-size: 120%;
+         text-align: right;
       }
+         .data-summary .climacon {
+            left: 3%;
+         }
 }
 
 
