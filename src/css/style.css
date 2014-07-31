@@ -346,7 +346,8 @@ body > header {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+      /*Slightly taller because iPhone shows some blue underneath*/
+		height: 102%;
 		z-index: 5;
 		background: #31B660;
 		font-family: "Chunk Five", serif;
