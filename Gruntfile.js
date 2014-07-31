@@ -59,6 +59,18 @@ module.exports = function(grunt) {
         }
       }
     },
+    autoprefixer: {
+      options: {
+        cascade: false,
+        browsers: ['> 5%']
+      },
+      build: {
+        expand: true,
+        flatten: true,
+        src: 'build/css/*.css',
+        dest: 'build/css/'
+      },
+    },
     cssmin: {
       add_banner: {
         options: {
@@ -108,11 +120,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Default task(s).
   grunt.registerTask('default', ['dev', 'watch']);
-  grunt.registerTask('dev', ['concat', 'cssmin', 'htmlmin:dev']);
-  grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'htmlmin:dist']);
+  grunt.registerTask('dev', ['concat', 'cssmin', 'autoprefixer', 'htmlmin:dev']);
+  grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'autoprefixer', 'htmlmin:dist']);
   grunt.registerTask('production', ['build', 'copy', 'buildcontrol:pages' ]);
 
 };
