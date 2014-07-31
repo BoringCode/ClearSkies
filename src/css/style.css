@@ -311,6 +311,12 @@ body > header {
 			/*Hover transition*/
 			transition: all 300ms ease-out;
 		}
+			/*Pushing and shoving the current location icon into place*/
+			.location-search .icon-location {
+				position: relative;
+				top: 0.1em;
+				margin-right: 0.2em;
+			}
 			.location-search li:last-child {
 				border-bottom: none;
 			}
