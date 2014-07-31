@@ -61,8 +61,7 @@ module.exports = function(grunt) {
     },
     autoprefixer: {
       options: {
-        cascade: false,
-        browsers: ['> 5%']
+        cascade: false
       },
       build: {
         expand: true,
