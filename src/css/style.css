@@ -427,7 +427,9 @@ body > header {
 			top: 0;
 			font-size: 1.6em;
 		}
-
+	.minutely-status i {
+		vertical-align: middle;
+	}
 .upcoming-weather h2 {
 	margin-bottom: 0.8em;
 }

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="weatherApp">
+<html ng-app="weatherApp" lang="en">
 	<head>
 		<title>Clear Skies</title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<link rel="stylesheet" href="css/ClearSkies.css">
 		<meta name="mobile-web-app-capable" content="yes">
@@ -129,7 +130,7 @@
 						</li>
 						<li class="col-sm col-sm-2-1">
 							<i class="climacon small umbrella"></i>
-							{{weather.current.precipProbability | number: 0 }}% chance of rain
+							{{weather.current.precipProbability*100 | number: 0 }}% chance of rain
 						</li>
 						<li class="col-sm col-sm-2-1">
 							<i class="climacon small compass north" style="-webkit-transform: rotate({{weather.current.windBearing}}deg); transform: rotate({{weather.current.windBearing}}deg)"></i>
@@ -137,6 +138,7 @@
 						</li>
 					</ul>
 				</div>
+				<p class="minutely-status center"><i class="small climacon {{rainStatusData | icon}}"></i> {{rainStatus}}</p>
 				<p class="text-summary center">{{summary}}</p>
 			</div>
 			<div ng-controller="Upcoming" class="wrap upcoming-weather">
