@@ -1,8 +1,8 @@
-#[Clear Skies](http://clearskiesapp.com) <img src="http://bradleyrosenfeld.com/ClearSkies/icon/favicon-96x96.png" alt="Icon" align="right" height="64"/>
+#[Clear Skies](http://clearskiesapp.com) <img src="http://bradleyrosenfeld.com/ClearSkies/icon/favicon-96x96.png" alt="Icon" align="right" height="48"/>
 
 > Does the world need another weather app? Yes!
 >
-  The functional goals of this project are to create a clean, well designed weather app that runs on any device with a web browser. When possible the app should allow the user to install it on their device to provide a native-like experience. The other big feature is the "optimistic" nature of the app. Clear, "look at the bright side" descriptions of the current weather conditions that will help the user decide how to prepare for the upcoming hour or day.
+  The functional goals of this project are to create a clean, well designed weather app that runs on any device with a web browser. When possible the app should allow the user to install it on their device to provide a native-like experience. The other big feature is the "optimistic" nature of the app. Clear, "look at the bright side" descriptions of the current weather conditions that will help the user decide how to prepare for the upcoming hour or day (upcoming feature).
 
 ##Installation
 
