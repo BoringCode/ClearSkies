@@ -395,7 +395,6 @@ body > header {
 			line-height: 0;
 		}
 	.current-weather p {
-		margin-bottom: 0.4em;
       padding: 0 2%;
 	}
 	.temperature {
@@ -427,9 +426,13 @@ body > header {
 			top: 0;
 			font-size: 1.6em;
 		}
-	.minutely-status i {
-		vertical-align: middle;
+	.minutely-status {
+		font-size: 1.5em;
+		margin-bottom: 2em;
 	}
+		.minutely-status .climacon {
+			vertical-align: middle;
+		}
 .upcoming-weather h2 {
 	margin-bottom: 0.8em;
 }
@@ -571,6 +574,21 @@ body > header {
          .data-summary .climacon {
             left: 3%;
          }
+}
+@media all and (min-height: 768px) {
+	.current-weather {
+		margin-top: 4em;
+	}
+}
+@media all and (min-height: 900px) {
+	.current-weather {
+		margin-top: 9em;
+	}
+}
+@media all and (min-height: 1024px) and (max-width: 768px) {
+	.current-weather {
+		margin-top: 14em;
+	}
 }
 
 

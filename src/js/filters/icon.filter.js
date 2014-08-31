@@ -2,6 +2,7 @@ weatherApp.filter("icon", function() {
 	//convert weather data object to icon
 	return function (current) {
 		if (typeof(current) !== "object") return;
+		if (current === {}) return "sun";
 		//Create list for icon
 		var icon = [];
 		//Check precip type and that probability is above 50%

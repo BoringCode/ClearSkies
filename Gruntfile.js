@@ -80,6 +80,26 @@ module.exports = function(grunt) {
         }
       }
     },
+    manifest: {
+      generate: {
+        options: {
+          basePath: 'build',
+          preferOnline: false,
+          verbose: false,
+          timestamp: true,
+        },
+        src: [
+          'index.html',
+          'js/*.js',
+          'css/*.css',
+          'fonts/*/*.eot',
+          'fonts/*/*.svg',
+          'fonts/*/*.ttf',
+          'fonts/*/*.woff',
+        ],
+        dest: 'build/manifest.appcache'
+      }
+    },
     watch: {
       files: ['src/**'],
       tasks: ['dev'],
@@ -120,11 +140,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-build-control');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-manifest');
 
   // Default task(s).
   grunt.registerTask('default', ['dev', 'watch']);
   grunt.registerTask('dev', ['concat', 'cssmin', 'autoprefixer', 'htmlmin:dev']);
-  grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'autoprefixer', 'htmlmin:dist']);
+  grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'autoprefixer', 'htmlmin:dist', 'manifest']);
   grunt.registerTask('production', ['build', 'copy', 'buildcontrol:pages' ]);
 
 };

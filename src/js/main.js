@@ -1,5 +1,11 @@
 var weatherApp = angular.module('weatherApp', ['ngResource', 'ngTouch']);
 
+weatherApp.config(['$httpProvider', function($httpProvider) {
+	$httpProvider.defaults.useXDomain = true;
+	delete $httpProvider.defaults.headers.common['Content-type']
+   delete $httpProvider.defaults.headers.common["X-Requested-With"];
+}])
+
 weatherApp.constant("errors", {
 	geo: {
 		unsupported: "Your browser does not support geolocation, try entering an address.",

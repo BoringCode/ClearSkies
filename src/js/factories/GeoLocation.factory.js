@@ -1,7 +1,6 @@
 weatherApp.factory('GeoLocation', ['$q', '$window', '$rootScope', '$resource', '$filter', '$timeout', 'errors', 'Settings',
 	function($q, $window, $rootScope, $resource, $filter, $timeout, errors, Settings) {
-		//http://maps.googleapis.com/maps/api/geocode/json
-		var resource = $resource("data/google.location-data.json", {} , {
+		var resource = $resource("http://maps.googleapis.com/maps/api/geocode/json", {} , {
 			query: { method:"GET", cache: true },
 		})
 		//Get the location from the browser

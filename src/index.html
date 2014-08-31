@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="weatherApp" lang="en">
+<html ng-app="weatherApp" lang="en" manifest="manifest.appcache">
 	<head>
 		<title>Clear Skies</title>
 		<meta charset="utf-8">
@@ -45,17 +45,17 @@
 	<body detect-device no-touch-scroll>
 		<header ng-controller="Settings" ng-class="{active: searchActive}">
 			<div class="top-bar">
-				<button class="refresh side-btn" refresh ng-click="$event.preventDefault();">
+				<button type="button" class="refresh side-btn" refresh ng-click="$event.preventDefault();">
 					<i class="icon-reload"></i>
 					<span>Refresh</span>
 				</button><!--
 				remove space (this is here for non minfied dev purposes only)
-				--><button ng-click="searchActive = !searchActive; $event.preventDefault();" class="search-btn main-btn">
+				--><button type="button" ng-click="searchActive = !searchActive; $event.preventDefault();" class="search-btn main-btn">
 					<span>{{settings.currentLocation}}</span>
 					<i class="icon-search"></i>
 				</button><!--
 				remove space (this is here for non minfied dev purposes only)
-				--><button class="toggle-settings side-btn" ng-click="settingsModal = true; $event.preventDefault();">
+				--><button type="button" class="toggle-settings side-btn" ng-click="settingsModal = true; $event.preventDefault();">
 					<span>Settings</span>
 					<i class="icon-cog"></i>
 				</button>
@@ -73,13 +73,13 @@
 				<div class="modal-content">
 					<header>
 						<h2>Clear Skies</h2>
-						<button class="close" ng-click="settingsModal = false; $event.preventDefault();"><i class="icon-cross"></i></button>
+						<button type="button" class="close" ng-click="settingsModal = false; $event.preventDefault();"><i class="icon-cross"></i></button>
 					</header>
 					<div class="modal-body">
 						<h3>Units</h3>
 						<ul class="row units middle">
 							<li ng-repeat="unit in settings.unit.options" class="col col-{{settings.unit.options.length}}-1">
-								<button ng-click="settings.unit.current = unit; $event.preventDefault();" ng-class="{selected: settings.unit.current == unit}">
+								<button type="button" ng-click="settings.unit.current = unit; $event.preventDefault();" ng-class="{selected: settings.unit.current == unit}">
 									<i class="climacon" ng-class="{farenheit: unit == 'us', celcius: unit == 'si'}" ng-hide="unit == 'auto'"></i>
 									<strong ng-show="unit == 'auto'">Auto</strong>
 								</button>
@@ -102,7 +102,7 @@
 					</div>
 					<footer>
 						<hr>
-						<button ng-click="restore()" class="reset pull-right">Reset App</button>
+						<button type="button" ng-click="restore()" class="reset pull-right">Reset App</button>
 					</footer>
 				</div>
 				<div class="background-close" ng-click="settingsModal = false;"></div>
@@ -139,9 +139,8 @@
 					</ul>
 				</div>
 				<p class="minutely-status center"><i class="small climacon {{rainStatusData | icon}}"></i> {{rainStatus}}</p>
-				<p class="text-summary center">{{summary}}</p>
 			</div>
-			<div ng-controller="Upcoming" class="wrap upcoming-weather">
+			<div class="wrap upcoming-weather">
 				<ul class="row">
 					<li ng-repeat="conditions in weather.upcoming.data | slice:1:6" class="col col-5-1">
 						<p><strong>{{conditions.time | formatTime:"ddd" }}</strong></p>
@@ -155,7 +154,7 @@
 			<div class="modal-content" no-bounce>
 				<header>
 					<h2>{{messageTitle}}</h2>
-					<button class="close" ng-click="show = false; $event.preventDefault();"><i class="icon-cross"></i></button>
+					<button type="button" class="close" ng-click="show = false; $event.preventDefault();"><i class="icon-cross"></i></button>
 				</header>
 				<div class="modal-body">
 					<p>{{messageText}}</p>
