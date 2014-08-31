@@ -1,6 +1,6 @@
 {
   "name": "ClearSkies",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "The optimistic weather app for everyone",
   "dependencies": {
     "grunt": "^0.4.5",
