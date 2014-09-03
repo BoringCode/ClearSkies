@@ -1,0 +1,21 @@
+{
+  "name": "Clear Skies",
+  "description": "Clear Skies is an optimistic weather app for everyone. It provides accurate, up to the minute, forecasts in most locations.",
+  "version": "0.5.0",
+  "manifest_version": 2,
+  "app": {
+    "urls": [
+      "http://clearskiesapp.com/"
+    ],
+    "launch": {
+      "web_url": "http://clearskiesapp.com"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "geolocation"
+  ]
+}
