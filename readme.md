@@ -1,4 +1,4 @@
-#[Clear Skies](http://clearskiesapp.com) <img src="http://bradleyrosenfeld.com/ClearSkies/icon/favicon-96x96.png" alt="Icon" align="right" height="48"/>
+#[Clear Skies](http://clearskiesapp.com) <img src="https://raw.githubusercontent.com/BoringCode/ClearSkies/master/build/icon/favicon-96x96.png" alt="Icon" align="right" height="48"/>
 
 > Does the world need another weather app? Yes!
 >
