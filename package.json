@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BoringCode/ClearSkies.git"
+    "url": "git@github.com:BoringCode/ClearSkies.git"
   },
   "author": "Bradley Rosenfeld",
   "license": "©2014 Bradley Rosenfeld",
