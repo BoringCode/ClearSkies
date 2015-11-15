@@ -2,7 +2,7 @@ weatherApp.factory('Weather', ['$resource', '$rootScope', 'errors', 'Settings', 
 	function($resource, $rootScope, errors, Settings, GeoLocation) {
 		//Create resource with some default params
 		var resource = $resource("https://api.forecast.io/forecast/:apiKey/:latitude,:longitude", {
-			apiKey: "49ab673f7f424c0331500362d11a8460",
+			apiKey: "8fdbe089580ca29752c2f41b878c418a",
 			callback: 'JSON_CALLBACK'
 		}, {
 			query: {method: "jsonp", isArray: false}
