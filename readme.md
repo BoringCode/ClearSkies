@@ -1,10 +1,10 @@
-#[Clear Skies](http://clearskiesapp.com) <img src="https://raw.githubusercontent.com/BoringCode/ClearSkies/master/build/icon/favicon-96x96.png" alt="Icon" align="right" height="48"/>
+# [Clear Skies](http://clearskiesapp.com) <img src="https://raw.githubusercontent.com/BoringCode/ClearSkies/master/build/icon/favicon-96x96.png" alt="Icon" align="right" height="48"/>
 
 > Does the world need another weather app? Yes!
 >
   The functional goals of this project are to create a clean, well designed weather app that runs on any device with a web browser. When possible the app should allow the user to install it on their device to provide a native-like experience. The other big feature is the "optimistic" nature of the app. Clear, "look at the bright side" descriptions of the current weather conditions that will help the user decide how to prepare for the upcoming hour or day (upcoming feature).
 
-##Installation
+## Installation
 
 This project uses [Node Package Manager](http://nodejs.org/) and [Grunt](http://gruntjs.com) to handle builds.
 
@@ -14,23 +14,23 @@ This project uses [Node Package Manager](http://nodejs.org/) and [Grunt](http://
 npm install
 ```
 
-###Development Build
+### Development Build
 _Run with `grunt`_
 
 Automatically creates a livereload server and outputs non-minified JS files from `src/`.
 
-###Production Build
+### Production Build
 _Run with `grunt build`_
 
 Minifies and concats all files from `src/` and moves to `build/` for production.
 
-###Deployment
+### Deployment
 _Run with `grunt production`_
 
 Runs build, copies to `production/`, and pushes to `gh-pages` branch.
 
 
-##Development
+## Development
 
 **Folder structure**
 
