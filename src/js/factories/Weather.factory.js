@@ -2,7 +2,7 @@ weatherApp.factory('Weather', ['$resource', '$rootScope', 'errors', 'Settings', 
 	function($resource, $rootScope, errors, Settings, GeoLocation) {
 		//Create resource with some default params
 		var resource = $resource("https://api.darksky.net/forecast/:apiKey/:latitude,:longitude", {
-			apiKey: "f7fdeb9f69cbed92f3ce557a64a7cf20",
+			apiKey: "USE_YOUR_OWN",
 			callback: 'JSON_CALLBACK'
 		}, {
 			query: {method: "jsonp", isArray: false}
